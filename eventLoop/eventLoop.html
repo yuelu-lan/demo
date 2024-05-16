@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>点击 start 按钮开始测试（并在点击 start 按钮的两秒内点击 test 按钮）</p>
+    <button id="start">start</button>
+    <button id="test">test</button>
+    <script>
+      const startBtnDom = document.getElementById('start');
+      const testBtnDom = document.getElementById('test');
+
+      const delay = (ms) => {
+        const startTime = new Date();
+        while (new Date() - startTime < ms) {}
+      };
+
+      startBtnDom.addEventListener('click', () => {
+        console.log('请在两秒内点击 test 按钮，以触发交互事件！！！');
+
+        delay(2000);
+
+        setTimeout(() => {
+          console.log('timeout!!!');
+        }, 0);
+
+        Promise.resolve().then(() => {
+          console.log('promise!!!');
+        });
+
+        console.log('渲染主线程！！！');
+      });
+
+      testBtnDom.addEventListener('click', () => {
+        console.log('test button click!!!');
+      });
+    </script>
+  </body>
+</html>
