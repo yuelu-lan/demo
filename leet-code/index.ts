@@ -33,3 +33,40 @@ function minimumTotal(triangle: number[][]): number {
 
   return Math.min(...dp.pop()!);
 }
+
+const myDebounce = (fun: Function, delay: number) => {
+  let timeId: NodeJS.Timeout | null = null;
+
+  return function (...args: any) {
+    // @ts-ignore
+    const context = this;
+
+    if (timeId) {
+      clearTimeout(timeId);
+    }
+
+    timeId = setTimeout(() => {
+      fun.apply(context, args);
+    }, delay);
+  };
+};
+
+const debounceFunTest = myDebounce((num1: number, num2: number) => {
+  console.log(num1, num2);
+}, 1000);
+
+debounceFunTest(1, 2);
+debounceFunTest(1, 2);
+debounceFunTest(1, 2);
+debounceFunTest(1, 2);
+
+/**
+ * @param delayTime 延时时间（ms）
+ */
+const delay = (delayTime: number) => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res(null);
+    }, delayTime);
+  });
+};
