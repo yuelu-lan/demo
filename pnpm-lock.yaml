@@ -11,12 +11,18 @@ importers:
       '@babel/core':
         specifier: ^7.24.4
         version: 7.24.4
+      '@types/lodash':
+        specifier: ^4.17.7
+        version: 4.17.7
       chardet:
         specifier: ^2.0.0
         version: 2.0.0
       iconv-lite:
         specifier: ^0.6.3
         version: 0.6.3
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       spark-md5:
         specifier: ^3.0.2
         version: 3.0.2
@@ -704,6 +710,9 @@ packages:
 
   '@types/babel__traverse@7.20.5':
     resolution: {integrity: sha512-WXCyOcRtH37HAUkpXhUduaxdm82b4GSlyTqajXviN4EfiuPgNYR109xMCKvpl6zPIpua0DGlMEDCq+g8EdoheQ==}
+
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/node@20.12.7':
     resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
@@ -1792,6 +1801,8 @@ snapshots:
   '@types/babel__traverse@7.20.5':
     dependencies:
       '@babel/types': 7.24.0
+
+  '@types/lodash@4.17.7': {}
 
   '@types/node@20.12.7':
     dependencies:
