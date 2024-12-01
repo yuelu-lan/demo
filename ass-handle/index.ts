@@ -33,7 +33,7 @@ const assHandle = ({
 
   const files = fs.readdirSync(dirAbsPath);
   for (const file of files) {
-    // 如果文件夹内存在 OV.ass 的文件，代表以前已经处理过了
+    // 如果文件夹内存在 xxx.OV.ass 的文件，代表以前已经处理过了
     if (file.includes('OV.ass')) {
       // 缓存
       skipDirs[dirAbsPath] = true;
