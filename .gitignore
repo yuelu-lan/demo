@@ -1,2 +1,30 @@
+# 依赖
 /node_modules
-/youdao
+
+# macOS
+.DS_Store
+
+# 日志
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 构建产物 / 缓存
+dist/
+build/
+coverage/
+.cache/
+
+# TypeScript 增量
+*.tsbuildinfo
+
+# 编辑器
+.vscode/
+.idea/
