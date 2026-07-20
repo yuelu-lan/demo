@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>阴文喻 · 前端开发工程师简历</title>
+<meta name="author" content="阴文喻">
+<meta name="description" content="6年前端工程师，先后驻场美团、阿里云、蚂蚁金服中后台业务，精通 React 全家桶与 TypeScript，具备源码级理解与构建插件开发能力。">
+<meta name="keywords" content="前端开发,React,TypeScript,架构升级,AI编程,蚂蚁金服,阿里云,美团">
+<meta name="generator" content="Kami">
+<style>
+  /* W04 / regular face for body text */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W04.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* W05 / medium face for headings (no synthetic bold) */
+  @font-face {
+    font-family: "TsangerJinKai02";
+    src: url("../fonts/TsangerJinKai02-W05.ttf") format("truetype"),
+       url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+@page {
+    size: A4;
+    margin: 11mm 13mm 11mm 13mm;
+    background: #f5f4ed;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --border:    #e8e6dc;
+    --border-soft: #e5e3d8;
+    --near-black: #141413;
+    --dark-warm: #3d3d3a;
+    --olive:     #504e49;
+    --stone:     #6b6a64;
+    --brand:     #1B365D;
+    --brand-tint: #EEF2F7;          /* solid equivalent of rgba(1B365D, 0.08), avoids tag double-rectangle bug */
+    --serif: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", Georgia, serif;
+    --sans: var(--serif);
+  }
+
+  html, body { background: var(--parchment); }
+
+  @media screen {
+    body { max-width: 210mm; margin: 0 auto; padding: 11mm 13mm; }
+  }
+
+  body {
+    color: var(--near-black);
+    font-family: var(--serif);
+    font-size: 9.5pt;
+    line-height: 1.50;
+    letter-spacing: 0.3pt;
+    widows: 3;
+    orphans: 3;
+  }
+
+  .serif {
+    font-family: var(--serif);
+  }
+
+  a { color: var(--brand); text-decoration: none; }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-bottom: 4.2mm;
+    padding-bottom: 2.3mm;
+    border-bottom: 0.6pt solid var(--border);
+  }
+  .header > div:first-child { flex-shrink: 0; }
+  .name {
+    font-family: var(--serif);
+    font-size: 26.5pt;
+    font-weight: 500;
+    letter-spacing: 0.5pt;
+    color: var(--near-black);
+    line-height: 1;
+    margin-bottom: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 2.2mm;
+    white-space: nowrap;
+  }
+  .alias {
+    font-size: 12.5pt;
+    font-weight: 400;
+    color: var(--stone);
+    letter-spacing: 0.2pt;
+  }
+  .alias::before {
+    content: "";
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: right;
+    font-size: 9pt;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+  .contact-links {
+    margin-top: 1.6mm;
+    font-size: 9pt;
+    color: var(--stone);
+    line-height: 1.4;
+  }
+  .contact-links a { color: var(--dark-warm); }
+  .contact-links .sep { color: var(--border); margin: 0 0.4em; }
+  .contact-loc {
+    font-size: 9pt;
+    color: var(--stone);
+    line-height: 1.4;
+  }
+  .contact a { color: var(--dark-warm); }
+  .contact .role { color: var(--brand); font-size: 10.5pt; font-weight: 500; }
+
+  /* METRICS */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 6mm;
+    margin-bottom: 3mm;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .metric {
+    background: transparent;
+    padding: 1mm 0 1.2mm;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7mm;
+    min-width: 0;
+    break-inside: avoid;
+  }
+  .metric-value {
+    font-family: var(--serif);
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--brand);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .metric-label {
+    font-size: 9pt;
+    color: var(--olive);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .metric-value .unit {
+    font-size: 10.5pt;
+    margin-left: 0.3mm;
+    font-weight: 500;
+    color: var(--brand);
+  }
+
+  .metrics--stack .metric {
+    gap: 0.5mm;
+    padding-bottom: 2mm;
+    border-bottom: 0.3pt dotted var(--border);
+  }
+
+  /* SECTION */
+  .section-title {
+    font-family: var(--serif);
+    font-size: 12.5pt;
+    font-weight: 500;
+    color: var(--near-black);
+    border-bottom: 0.5pt solid var(--border);
+    padding: 0 0 1mm 0;
+    margin: 5.8mm 0 1.7mm 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2mm;
+  }
+  .section-title .sub {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 9pt;
+    color: var(--stone);
+    letter-spacing: 0.3pt;
+  }
+
+  section:first-of-type .section-title { margin-top: 0; }
+  .page-break > .section-title { margin-top: 0; }
+
+  /* Unify gap from section-title bottom border to first content's first line = 3mm
+     (section-title margin-bottom 1.8mm + first-child top spacing 1.2mm) */
+  .section-title + .skill-row { padding-top: 1.2mm; }
+  .section-title + .edu-row { padding-top: 1.2mm; }
+
+  /* SUMMARY */
+  .summary { font-size: 9.5pt; line-height: 1.50; color: var(--near-black); }
+  .summary .em-brand { color: var(--brand); }
+  .summary .hl { color: var(--brand); }
+
+  /* WORK EXPERIENCE LIST */
+  .exp-list { margin-bottom: 0.5mm; }
+  .exp-item { padding: 1.0mm 0; }
+  .exp-head {
+    display: flex; align-items: baseline; gap: 2mm;
+    margin-bottom: 0.4mm;
+  }
+  .exp-co { font-size: 10pt; font-weight: 500; color: var(--near-black); }
+  .exp-time { font-size: 9pt; color: var(--stone); margin-left: auto; }
+  .exp-role { font-size: 9pt; color: var(--brand); letter-spacing: 0.2pt; }
+  .exp-body { font-size: 9pt; color: var(--olive); line-height: 1.40; letter-spacing: 0.2pt; }
+
+  /* PROJECTS */
+  .project {
+    padding: 2.6mm 0;
+    break-inside: avoid;
+  }
+  .project:first-of-type { padding-top: 1.2mm; }
+  .proj-head {
+    display: block; margin-bottom: 0.75mm;
+  }
+  .proj-name {
+    font-family: var(--serif);
+    font-size: 11pt; font-weight: 500; color: var(--near-black);
+  }
+  .proj-kind { font-size: 11pt; color: var(--olive); margin-left: 1.5mm; }
+  .proj-role {
+    font-size: 9pt; color: var(--brand); font-weight: 500;
+    float: right; background: #EEF2F7;
+    padding: 0.4mm 1.2mm; border-radius: 2pt; letter-spacing: 0.05pt;
+    white-space: nowrap;
+  }
+  .proj-lines { display: table; width: 100%; }
+  .proj-row { display: table-row; }
+  .proj-label {
+    display: table-cell; width: 11mm;
+    font-size: 9pt; color: var(--brand);
+    font-weight: 500; letter-spacing: 0.2pt;
+    padding: 0.2mm 0 0.4mm 0; vertical-align: top;
+  }
+  .proj-text {
+    display: table-cell; font-size: 9.5pt;
+    color: var(--near-black); line-height: 1.50; letter-spacing: 0.3pt;
+    padding: 0 0 0.4mm 0.5mm;
+  }
+  .proj-text .hl { color: var(--brand); }
+
+  /* PAGE 2 FORCE BREAK */
+  .page-break { break-before: page; }
+
+  /* OPEN SOURCE - NEW ENHANCED LAYOUT */
+  .os-intro {
+    font-size: 9.5pt; line-height: 1.50; letter-spacing: 0.3pt;
+    color: var(--near-black);
+    padding: 0; margin: 1.2mm 0 2mm 0;
+    background: transparent;
+    break-inside: avoid;
+  }
+  .os-intro .hl { color: var(--brand); }
+  .os-intro .strong { color: var(--near-black); }
+
+  .os-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8mm; row-gap: 1mm;
+  }
+  .os-item {
+    display: flex; align-items: baseline;
+    gap: 2mm; padding: 1mm 0 1mm 0;
+    border-bottom: 0.3pt dotted var(--border);
+    break-inside: avoid;
+  }
+  .os-item:last-child,
+  .os-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  .os-name {
+    font-family: var(--serif);
+    font-size: 10pt; font-weight: 500;
+    flex-shrink: 0; min-width: 14mm;
+  }
+  .os-name a { color: var(--brand); }
+  .os-desc { font-size: 9pt; color: var(--olive); line-height: 1.40; flex: 1; }
+  .os-star {
+    font-size: 9pt; color: var(--dark-warm);
+    font-weight: 500; white-space: nowrap; flex-shrink: 0; min-width: 7.5mm; text-align: right;
+  }
+  .os-star.big { color: var(--brand); font-size: 9.2pt; }
+
+  .os-highlight {
+    margin-top: 2.5mm;
+    padding: 1.8mm 2.8mm;
+    background: var(--brand-tint);
+    border-radius: 2pt;
+    font-size: 9pt; line-height: 1.40;
+    color: var(--near-black);
+    letter-spacing: 0.3pt;
+    break-inside: avoid;
+  }
+  .os-highlight .hl { color: var(--brand); }
+  .os-highlight .tag {
+    display: inline-block;
+    background: var(--brand); color: var(--ivory);
+    font-size: 9pt; font-weight: 500;
+    padding: 0.2mm 1.5mm; border-radius: 2pt;
+    margin-right: 1.2mm; letter-spacing: 0.2pt;
+    transform: translateY(-0.2mm);
+  }
+
+  /* AI CONVICTION - NEW SECTION */
+  .convictions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5mm;
+    margin-top: 1.2mm;
+  }
+  .conv-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0 2mm 0 0;
+    break-inside: avoid;
+  }
+  .conv-head, .ai-card-head {
+    font-family: var(--serif);
+    font-size: 9.8pt; font-weight: 500;
+    color: var(--near-black); margin-bottom: 0.9mm;
+    display: flex; align-items: baseline; gap: 1.5mm;
+  }
+  .conv-head .year, .ai-card-head .year {
+    color: var(--brand); font-weight: 500;
+    font-size: 9pt;
+  }
+  .conv-body, .ai-card-body {
+    font-size: 9pt; color: var(--olive);
+    line-height: 1.40; letter-spacing: 0.3pt;
+  }
+  .conv-body .hl, .ai-card-body .hl { color: var(--brand); }
+  .conv-body .em-brand, .ai-card-body .em-brand { color: var(--brand); }
+
+  /* INFLUENCE */
+  .handle-strip {
+    background: transparent;
+    padding: 0; margin: 1.2mm 0 2mm 0;
+    display: flex; align-items: baseline; gap: 3mm;
+    break-inside: avoid;
+  }
+  .handle-strip .handle {
+    font-family: var(--serif);
+    font-size: 9.8pt; font-weight: 500; color: var(--brand);
+    flex-shrink: 0;
+  }
+  .handle-strip .follower { font-size: 9pt; color: var(--stone); flex-shrink: 0; }
+  .handle-strip .desc { font-size: 9pt; color: var(--olive); line-height: 1.40; letter-spacing: 0.3pt; flex: 1; }
+
+  .impact-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 5.5mm; }
+  .inf-block-title {
+    margin-top: 2.5mm;
+    font-family: var(--serif);
+    font-size: 9.8pt; font-weight: 500;
+    color: var(--near-black);
+    margin-bottom: 1.5mm; padding-bottom: 0.5mm;
+    border-bottom: 0.3pt dotted var(--border);
+    display: flex; align-items: baseline; gap: 2mm;
+  }
+  .inf-block-title .small {
+    font-family: var(--serif);
+    font-size: 9pt; color: var(--stone);
+    font-weight: 400; margin-left: 0; letter-spacing: 0.2pt;
+  }
+  .art-row {
+    padding: 1.6mm 0;
+    border-bottom: 0.3pt dotted var(--border-soft);
+  }
+  .talk-row {
+    display: flex; justify-content: space-between;
+    align-items: flex-start;
+    gap: 2mm; padding: 1.6mm 0;
+    border-bottom: 0.3pt dotted var(--border-soft);
+  }
+  .art-row:last-of-type, .talk-row:last-of-type { border-bottom: none; }
+  .art-header {
+    display: flex; align-items: baseline;
+    justify-content: space-between;
+    gap: 2mm; padding-right: 3mm;
+  }
+  .art-title, .talk-title {
+    font-size: 9pt; color: var(--near-black);
+    font-weight: 500; line-height: 1.40;
+    flex: 1 1 auto; min-width: 0;
+  }
+  .art-stats, .talk-venue {
+    font-size: 9pt; color: var(--stone);
+    line-height: 1.40; margin-top: 0.5mm; padding-left: 0; letter-spacing: 0.3pt;
+    white-space: nowrap;
+  }
+  .art-stats .em-brand {
+    color: var(--brand);
+  }
+  .art-date {
+    font-size: 9pt; color: var(--stone);
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+  }
+  .art-stats .lang-cn, .art-stats .lang-en {
+    display: inline-block;
+    font-size: 9pt; font-weight: 500;
+    margin-right: 0.5mm;
+    letter-spacing: 0.2pt;
+    color: var(--stone);
+  }
+  .talk-date {
+    font-size: 9pt; color: var(--stone); font-weight: 500;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+    padding-top: 0.3mm;
+  }
+
+  /* SKILLS */
+  .skill-row {
+    display: flex; gap: 2.5mm; padding: 1.7mm 0;
+    border-bottom: 0.3pt dotted var(--border);
+    align-items: baseline;
+  }
+  .skill-row:last-of-type { border-bottom: none; }
+  .skill-label {
+    font-size: 9pt; font-weight: 500;
+    color: var(--brand); letter-spacing: 0.3pt;
+    width: 22mm; flex-shrink: 0;
+    line-height: 1.36;
+  }
+  .skill-body { font-size: 9pt; color: var(--near-black); line-height: 1.40; letter-spacing: 0.3pt; flex: 1; }
+  .skill-body .em-brand { color: var(--brand); }
+
+  .no-break { break-inside: avoid; }
+
+  /* EDUCATION */
+  .edu-row {
+    display: flex; justify-content: space-between;
+    align-items: baseline; font-size: 9.5pt; padding: 1.7mm 0;
+  }
+  .edu-row .school {
+    font-family: var(--serif);
+    font-weight: 500; font-size: 10.7pt;
+  }
+  .edu-row .major { color: var(--olive); font-size: 9.5pt; }
+  .edu-row .date { color: var(--stone); font-variant-numeric: tabular-nums; font-size: 9pt; }
+
+  /* TABLE (kami-table) */
+  table, .kami-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin: 6pt 0;
+    break-inside: avoid;
+  }
+  table th, .kami-table th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--dark-warm);
+    padding: 3pt 6pt;
+    border-bottom: 1pt solid var(--border);
+    background: transparent;
+  }
+  table td, .kami-table td {
+    padding: 2pt 6pt;
+    border-bottom: 0.3pt solid var(--border-soft);
+    vertical-align: top;
+  }
+  table.compact th, .kami-table.compact th { padding: 2pt 4pt; font-size: 8pt; }
+  table.compact td, .kami-table.compact td { padding: 1pt 4pt; font-size: 8pt; line-height: 1.4; }
+  table.financial td:not(:first-child), .kami-table.financial td:not(:first-child) {
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  table.financial th:not(:first-child), .kami-table.financial th:not(:first-child) { text-align: right; }
+  table.striped tbody tr:nth-child(even) td, .kami-table.striped tbody tr:nth-child(even) td {
+    background: var(--ivory);
+  }
+  table .total td, .kami-table .total td {
+    font-weight: 500; border-top: 1pt solid var(--brand); border-bottom: none; color: var(--near-black);
+  }
+
+  /* DENSE VARIANT: add class="resume--dense" to <body> when 5+ projects overflow */
+  body.resume--dense { font-size: 9pt; }
+  body.resume--dense .proj-text { line-height: 1.38; }
+  body.resume--dense .tl-body { font-size: 8.5pt; }
+  body.resume--dense .project { padding: 1.6mm 0; }
+  body.resume--dense .section-title { margin-top: 4.2mm; margin-bottom: 1.2mm; }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     使用说明：
+ - 所有占位变量替换为实际内容
+ - 删除不适用的 section，如无开源/AI判断/对外影响力
+ - 项目可加减，每个严格遵守 角色/动作/结果 三段式
+ - 改完验证：必须 3 页
+       python3 -c "from weasyprint import HTML; HTML('resume.html').write_pdf('out.pdf')"
+ - 内容策略详见 references/writing.md
+     ===================================================================== -->
+
+
+<!-- ═══════════ PAGE 1 ═══════════ -->
+
+<div class="header">
+  <div>
+    <div class="name serif">阴文喻<span class="alias">男 · 28 岁</span></div>
+    <div class="contact-links">
+      <a href="tel:18582484801">18582484801</a>
+      <span class="sep">·</span>
+      <a href="mailto:kiriyamarei@foxmail.com">kiriyamarei@foxmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://www.yuque.com/yuelu_">语雀 @yuelu_</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/yuelu-lan">GitHub @yuelu-lan</a>
+    </div>
+  </div>
+  <div class="contact">
+    <span class="role">前端开发工程师 · 6 年经验</span>
+    <div class="contact-loc">成都</div>
+  </div>
+</div>
+
+<!-- 3 个最强的数字标签 -->
+<div class="metrics">
+  <div class="metric"><span class="metric-value serif">6<span class="unit">年</span></span><span class="metric-label">前端开发经验</span></div>
+  <div class="metric"><span class="metric-value serif">3<span class="unit">家</span></span><span class="metric-label">大厂业务驻场 · 美团/阿里云/蚂蚁</span></div>
+  <div class="metric"><span class="metric-value serif">70<span class="unit">+ 页</span></span><span class="metric-label">单次架构升级覆盖</span></div>
+</div>
+
+<section>
+  <div class="section-title">个人简介</div>
+  <div class="summary">
+    6 年前端工程师，先后驻场<span class="em-brand">美团、阿里云、蚂蚁金服</span>中后台业务线，深耕 React 中后台与微前端架构。精通 React 全家桶与 TypeScript，对运行原理有系统理解，具备 Babel 插件开发能力；近年开始系统性地将 AI 编程工具引入工程提效，沉淀 ai rules、agent skill 等可复用实践，覆盖<span class="hl">组件库治理、国际化、自动化周报</span>等场景。
+  </div>
+</section>
+
+<section>
+  <div class="section-title">核心能力</div>
+  <div class="skill-row">
+    <div class="skill-label">React 生态</div>
+    <div class="skill-body">熟练掌握 React 及 umi、antd、antv 等生态，<span class="em-brand">主导 react15+antd2 → umi.js 架构升级，覆盖约 70 个页面，解决 antd2/5 共存与 ProComponent 兼容问题</span>；熟悉 React 运行原理（Fiber、Diff、批量更新、Hooks）。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">JS / TS</div>
+    <div class="skill-body">熟悉事件循环、原型链等核心概念，<span class="em-brand">熟练运用泛型与内置类型等高级特性</span>，能独立完成业务类型设计。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">工程化</div>
+    <div class="skill-body">熟悉 Webpack、Vite、Babel 构建工具链，<span class="em-brand">具备 Babel 插件开发能力</span>；曾编写 babel 插件解决项目无法使用 ProComponent 的问题。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">Vue 生态</div>
+    <div class="skill-body">熟悉 Vue 技术栈含 nuxt、element-ui、echarts，独立交付 PC / H5 / 小程序全端项目，掌握 <span class="em-brand">前后端数据交互与全栈协作</span>。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">全栈协作</div>
+    <div class="skill-body">了解 Java 后端开发流程，能借助 AI 完成简单后端需求；在资金管理门户承担 <span class="em-brand">为期一个多月的全栈迭代</span>。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">AI 编程</div>
+    <div class="skill-body">熟练运用 Claude Code、Cursor 等 AI 编程工具，掌握 mcp、skill、cli 基本原理，已将 AI 沉淀为 <span class="em-brand">ai rules、agent skill 等工程化机制</span>。</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">工作经历<span class="sub">2020.10 - 至今 · 3 段驻场经历</span></div>
+
+  <!-- 工作经历列表：公司 + 时间 + 一句职责 -->
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-head">
+        <span class="exp-co serif">汉得信息（美团业务）</span>
+        <span class="exp-time">2026.03-2026.07</span>
+        <span class="exp-role">前端开发 / 全栈</span>
+      </div>
+      <div class="exp-body">资金管理门户日常需求开发，承担一个多月全栈迭代，编写周会文档 skill。</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <span class="exp-co serif">卓越际联（阿里云业务）</span>
+        <span class="exp-time">2024.07-2026.02</span>
+        <span class="exp-role">前端开发</span>
+      </div>
+      <div class="exp-body">云治理中心前端迭代，重构请求层与全局 context，沉淀通用组件与 hooks。</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <span class="exp-co serif">软通动力（蚂蚁金服业务）</span>
+        <span class="exp-time">2022.03-2024.06</span>
+        <span class="exp-role">前端开发</span>
+      </div>
+      <div class="exp-body">网络方舟运营中心 owner，主导 react15+antd2 → umi.js 架构升级。</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <span class="exp-co serif">四川众信互联</span>
+        <span class="exp-time">2020.10-2022.02</span>
+        <span class="exp-role">前端开发</span>
+      </div>
+      <div class="exp-body">PC / H5 / 小程序全端交付，维护前端工具链与组件库。</div>
+    </div>
+  </div>
+
+  <div class="section-title">项目经历</div>
+
+  <!-- 项目模板 - 重复此块 3-5 次 -->
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">资金管理门户</span>
+      <span class="proj-kind">· 美团 · Monorepo + 微前端 · 2026.03-2026.07</span>
+      <span class="proj-role">前端开发 / 全栈</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">美团资金管理门户前端日常需求开发，并承担流动性管理平台为期一个多月的全栈迭代。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">基于 React 16 + TypeScript + Monorepo 微前端架构，多子应用对应多后端（XFrame / DDD 分层）；优化前端 ai rules，区分 beetle-ui、mtd-ui 等组件库的使用边界；编写周会文档 skill，从质量平台拉取数据并自动生成周报。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text">解决项目内 <span class="hl">3 套内部组件库同名组件 props 不一致</span> 导致 AI 混用 API 的错误；周会 skill 接入 <span class="hl">10 余个平台</span> 数据，人工耗时从 1h 降至 0，全程无需人工介入。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PAGE 2 ═══════════ -->
+<section class="page-break">
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">云治理中心</span>
+      <span class="proj-kind">· 阿里云 · XConsole + React + TS · 2024.07-2026.02</span>
+      <span class="proj-role">前端开发</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">阿里云云治理中心"治理检测"模块前端迭代，涵盖前台、后台及 Widget 组件。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">重构请求层逻辑与全局 context 拆分；编写通用业务 hooks、工具函数与通用组件弥补 Fusion 组件缺口；引入 vitest 配合 AI 工具快速补齐 hooks/utils 单测；编写 agent skill 统一处理国际化文案。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text">请求层性能与可读性提升，全局 context 按功能拆分降低耦合；通用组件/hooks 在日常需求中持续复用，<span class="hl">降低团队代码重复率</span>；i18n agent skill 统一文案格式并提升接入效率。</div>
+      </div>
+    </div>
+  </div>
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">网络方舟 · 运营中心</span>
+      <span class="proj-kind">· 蚂蚁金融网络 · qiankun + umi · 2022.10-2024.06</span>
+      <span class="proj-role">模块 owner</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">蚂蚁金融网络核心业务平台运营中心微应用 owner，负责日常迭代与架构升级。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">主导前端框架由 react15 + antd2 升级为标准 bigfish（umi.js）；编写 babel 插件解决项目无法使用 ProComponent 的问题；老页面维持 antd2、新页面用 antd5 解决类名冲突共存；以虚拟列表支持大数据量表格批量操作，配合 bizCharts 完成大屏需求。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text">架构升级覆盖 <span class="hl">约 70 个页面</span>，消除 antd2/5 类名冲突痛点；虚拟滚动避免大数据量表格卡死，保障批量操作流畅交付。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">金融指挥塔</span>
+      <span class="proj-kind">· 蚂蚁金融网络 · PC + H5 双端 · 2022.10-2024.02</span>
+      <span class="proj-role">前端开发</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">蚂蚁金融网络业务监控平台，含报表统计、日志记录、异常报警，负责 PC 与 H5 双端迭代。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">PC 端基于 qiankun + umi + antv（G2/X6），H5 端基于 smallfish + antd-mobile；对 antv-g2 二次封装抽离图表公共配置统一系统风格；用 antv-x6 实现流程图业务模块；对接阿里钉工作通知接口实现消息提醒。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text">g2 二次封装在 <span class="hl">项目多处图表场景</span> 复用，保证系统视觉一致性；双端监控能力稳定交付，覆盖报表、报警、日志全链路。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">运营平台</span>
+      <span class="proj-kind">· 蚂蚁金融网络 · react15 + antd2 · 2022.03-2023.01</span>
+      <span class="proj-role">owner</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">蚂蚁金融网络配置变更收口平台 owner，提供面向运营同学的管理工具集群。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">基于 react15、antd2、jQuery、webpack 技术栈，封装各类业务组件、通用组件与工具函数；使用 bizCharts 完成图表需求；运用虚拟列表、预加载技术应对大数据量场景。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text"><span class="hl">降低代码重复率、提升开发效率</span>，虚拟列表优化保障大数据量场景下的页面流畅度，为后续运营中心架构升级积累组件化基础。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">数字管理平台</span>
+      <span class="proj-kind">· 众信互联 · Vue + Nuxt · 2021.06-2022.02</span>
+      <span class="proj-role">前端开发</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">公司自研基础功能集群平台前端开发，集成权限管理、配置管理等系统功能，旨在快速支撑管理系统开发。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">基于 Vue、Nuxt、ElementUI、Axios、Echarts 技术栈；负责权限管理、系统消息、应用开发、在线应用、系统日志等模块；集成 Zjmzxfzhl 实现工作流管理与表单功能；用 echarts 封装图表组件实现数据可视化。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text"><span class="hl">支撑管理系统快速搭建</span>，完成应用开发与在线应用模块及配套审批流程，沉淀可复用工作流与权限体系。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">凤凰数字媒体教育云大数据平台</span>
+      <span class="proj-kind">· 众信互联 · Vue + Echarts · 2021.04-2021.09</span>
+      <span class="proj-role">前端开发</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">面向凤凰数媒八大平台使用数据统计平台，含大屏端与管理端，负责前端开发与交付后维护。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">基于 vue-element-admin 搭建项目；用 Echarts 以"下钻"模式直观展示各层级数据；使用 vue-awesome-swiper 实现积分排行榜滚动，wangeditor 完成富文本需求。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text"><span class="hl">完成大屏端与管理端全链路交付</span>，下钻式数据可视化直观呈现八大平台走势，支撑平台管理员与各学院多角色数据查看。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="proj-head">
+      <span class="proj-name serif">数字媒体教学与考务平台</span>
+      <span class="proj-kind">· 众信互联 · Vue + ElementUI · 2020.11-2021.02</span>
+      <span class="proj-role">前端开发</span>
+    </div>
+    <div class="proj-lines">
+      <div class="proj-row">
+        <div class="proj-label">角色</div>
+        <div class="proj-text">面向学生与教师的在线课程、考试一体化平台，含前台系统、管理系统、考试系统，参与三个系统开发与维护。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">动作</div>
+        <div class="proj-text">基于 Vue、ElementUI、Axios 技术栈；用 addRoute 实现后台权限管理；集成 ali-oss、aliplayer 实现文件存储与视频/直播；用 vue-waterfall2 瀑布流、vue-cropper 裁剪、vue-draggable-resizable 证件模板定制、html2canvas 打印 PDF。</div>
+      </div>
+      <div class="proj-row">
+        <div class="proj-label">结果</div>
+        <div class="proj-text"><span class="hl">完成三系统全端交付</span>，覆盖前台、管理、考试全场景，沉淀业务组件与工具函数支撑后续复用。</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════ PAGE 3 ═══════════ -->
+
+<section class="page-break">
+  <div class="section-title">AI 工程实践</div>
+  <div class="os-intro">
+    不止于使用 AI 编程工具，而是把 <span class="hl">规则约束、任务编排、自动化验证</span> 沉淀为可复用的工程化机制，让 AI 在真实业务里稳定产出可用代码与文档。
+  </div>
+  <div class="convictions">
+    <div class="conv-card">
+      <div class="conv-head"><span class="year">2026</span>组件库 API 治理</div>
+      <div class="conv-body">
+        资金管理门户存在 3 套内部组件库同名但 props 不一致的问题，AI 生成代码常混用导致报错。为前端项目编写 <span class="hl">ai rules</span>，按组件库区分使用边界，从源头约束 AI 生成正确 API。
+      </div>
+    </div>
+    <div class="conv-card">
+      <div class="conv-head"><span class="year">2026</span>周会文档 skill</div>
+      <div class="conv-body">
+        编写 skill 从各质量平台拉取数据并自动生成周会文档，接入 <span class="hl">10 余个平台</span>，人工耗时从 1h 降至 0，全程对话驱动、无需人工介入。
+      </div>
+    </div>
+    <div class="conv-card">
+      <div class="conv-head"><span class="year">2025</span>国际化 agent skill</div>
+      <div class="conv-body">
+        云治理中心多语种文案接入格式不一，编写 agent skill 统一处理 i18n，<span class="hl">统一文案格式</span>并提升接入效率，将重复性国际化流程沉淀为可复用机制。
+      </div>
+    </div>
+    <div class="conv-card">
+      <div class="conv-head"><span class="year">2025</span>vitest + AI 单测</div>
+      <div class="conv-body">
+        云治理中心引入 vitest 配合 AI 编程工具，快速补齐 hooks、utils 单测，<span class="hl">将单测纳入日常开发流程</span>，提升通用工具的可信度与回归保障。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">团队协作与工程规范</div>
+  <div class="skill-row">
+    <div class="skill-label">需求评审</div>
+    <div class="skill-body">参与需求、后端设计、测试用例评审，从前端视角对齐方案并给出意见，<span class="em-brand">减少需求变更风险</span>。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">代码规范</div>
+    <div class="skill-body">制定前端代码规范并参与代码评审，识别潜在技术债务，<span class="em-brand">协助提升团队代码质量</span>。</div>
+  </div>
+  <div class="skill-row">
+    <div class="skill-label">团队工具</div>
+    <div class="skill-body">负责通用组件、自定义 hooks、工具函数的编写维护，参与团队基础工具库建设演进，<span class="em-brand">降低重复率、提升开发效率</span>。</div>
+  </div>
+</section>
+
+<section class="no-break">
+  <div class="section-title">教育背景</div>
+  <div class="edu-row">
+    <div>
+      <span class="school serif">西南石油大学</span>
+      <span class="major">　· 本科 · 非全日制 · 信息管理与信息系统 · <span class="em-brand">双证齐全</span></span>
+    </div>
+    <div class="date">2023 - 2025</div>
+  </div>
+  <div class="edu-row">
+    <div>
+      <span class="school serif">四川电力职业技术学院</span>
+      <span class="major">　· 大专 · 全日制 · 发电厂及电力系统</span>
+    </div>
+    <div class="date">2015 - 2018</div>
+  </div>
+</section>
+
+</body>
+</html>
